@@ -1,0 +1,29 @@
+language="kaboom"
+
+# run = "[ -d 'dist' ] && npm run preview || npm run build && npm run preview"
+run = "npm run preview"
+entrypoint = "readme.md"
+
+hidden = [
+    "readme.md",
+    ".config",
+    "vite.config.js",
+    "LICENSE",
+    ".gitignore",
+	"dist",
+	"package.json",
+	"package-lock.json",
+]
+
+[packager]
+language="nodejs"
+
+[packager.features]
+packageSearch = true
+
+[languages.javascript]
+pattern = "**/*.{js,ts}"
+syntax = "javascript"
+
+[languages.javascript.languageServer]
+start = [ "typescript-language-server", "--stdio" ]
